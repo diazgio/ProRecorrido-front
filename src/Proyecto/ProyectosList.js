@@ -4,7 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import axios from 'axios';
-import Day from './day';
+// import Day from './day';
 import { makeStyles } from '@material-ui/core';
 
 const api_url = 'http://localhost:3000/api/v1/proyectos';
@@ -22,6 +22,8 @@ const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState('');
 
+  const [week, setWeek] = useState('');
+
   useEffect(() => {
     axios
       .get(api_url)
@@ -33,8 +35,12 @@ const ProjectsList = () => {
       });
   },[])
 
-  const handleChange = (e) => {
+  const handleChangeProject = (e) => {
     setSelectedProject(e.target.value);
+  }
+
+  const handleChangeWeek = (e) => {
+    setWeek(e.target.value);
   }
 
   console.log(selectedProject);
@@ -45,14 +51,27 @@ const ProjectsList = () => {
           <InputLabel>Proyectos Vigilados</InputLabel>
           <Select defaultValue=""
             value={selectedProject}
-            onClick={handleChange}
+            onClick={handleChangeProject}
           >
             {projects.map((e) => (
               <MenuItem key={e.id} value={e.id}>{e.nombre_empresa}</MenuItem>
             ))}
           </Select>
         </FormControl>
-      </div>           
+      </div>
+      <div>
+        <FormControl className={classes.formControl}>
+          <InputLabel>Semana de Trabajo</InputLabel>
+          <Select defaultValue=""
+            value={week}
+            onClick={handleChangeWeek}
+          >
+            {/* {projects.map((e) => (
+              <MenuItem key={e.id} value={e.id}>{e.nombre_empresa}</MenuItem>
+            ))} */}
+          </Select>
+        </FormControl>
+      </div>        
       {/* {selectedProject && selectedProject.days.map((day) => {
           <Day disponibilidades={day.disponibilidades}/>
       })}             */}

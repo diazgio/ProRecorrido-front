@@ -1,0 +1,39 @@
+#project_from {
+  display: flex;
+  align-items: center;
+}
+
+#project_from button {
+  margin-left: 1rem;
+}
+
+.navbar {
+  margin: 2rem 0;
+}
+
+.nav-bar li {
+  list-style: none;
+}
+
+.nav-bar li a,
+.link {
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold;
+}
+
+.u-list li {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contract-elements {
+  display: flex;
+  flex-direction: column;
+}
