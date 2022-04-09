@@ -37,3 +37,23 @@
   display: flex;
   flex-direction: column;
 }
+
+.array-container {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.day-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 170px;
+  margin-bottom: 5px;
+}
+
+.num-sem-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
