@@ -57,3 +57,29 @@
   justify-content: space-between;
   width: 500px;
 }
+
+.project-title h3 {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-around;
+}
+
+.disp-container ul li {
+  margin-bottom: 2rem;
+}
+
+.container-dips-data {
+  display: flex;
+  width: 100%;
+}
+
+.disp-hours {
+  width: 15%;
+}
+
+.week-container {
+  display: flex;
+  justify-content: space-around;
+  width: 85%;
+}

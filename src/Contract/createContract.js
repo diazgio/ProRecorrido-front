@@ -17,6 +17,7 @@ const CreateContract = () => {
   const [workers, setWorkers] = useState([]);
   const [dislpayValue, getValue] = useState([]);
   const [selectedWorkers, setSelectedWorkers] = useState();
+  const [nombre, setNombre] = useState('');
   const [duration, setDuration] = useState('');
   const [num_sem, setNumSemana] = useState();
   const [start_hours, setStartHours] = useState([0,0,0,0,0,0,0]);
@@ -55,18 +56,23 @@ const CreateContract = () => {
          start_hour: start_hours,
          end_hour: end_hours,
          num_sem: num_sem,
-         workers_attributes: selectedWorkers
+         workers_attributes: selectedWorkers,
+         nombre_c: nombre
        }),
        headers: { 'Content-Type': 'application/json' },
      }).then((response) => response)
    }
 
   const handleDurationChange = (e) => {
-    setDuration(e.target.value)
+    setDuration(e.target.value);
   }
 
   const handleNumSemChange = (e) => {
     setNumSemana(e.target.value);
+  }
+
+  const handleNombreChange = (e) => {
+    setNombre(e.target.value);
   }
 
   const handleStartHours = (e) => {
@@ -125,6 +131,16 @@ const CreateContract = () => {
             autoComplete="off"
           >
             <div className='contract-elements'>
+              <div>
+              <TextField
+                id="contract_name_input"
+                label="Nombre del Contrato"
+                variant="outlined"
+                type="text"
+                name={nombre}
+                onChange={handleNombreChange}
+              />
+              </div>
               <div>
                 <h3>Lista de trabajadores:</h3>
                 <Select isMulti options={valueWorkers} onChange={handleChangeWorker}></Select>

@@ -79,7 +79,9 @@ const CreateProject = () => {
         <Grid>
           <ul className='u-list'>
             {projects && projects.map((element) => (
-              <li key={element.id}>{element.nombre_empresa} <Link className="link" to="/newContract" state={ {project_id: element.id}}>Crear Contrato</Link></li>
+              <li key={element.id}>
+                {element.nombre_empresa} <Link className="link" to="/Project" state={ {project_id: element.id}}>Configuraciones</Link>
+              </li>
             ))}
           </ul>
         </Grid>
