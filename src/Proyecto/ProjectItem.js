@@ -37,7 +37,7 @@ const ProjectItem = () => {
   return (
       <>
         <div className='project-title'>
-          <h3>Nombre de la empresa: <h2>{project.nombre_empresa}</h2></h3>
+          <h3>Nombre de la empresa: <p>{project.nombre_empresa}</p></h3>
         </div>
         <div className='disp-container'>
           <ul>

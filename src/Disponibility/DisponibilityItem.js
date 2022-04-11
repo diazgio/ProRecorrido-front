@@ -18,6 +18,7 @@ const DisponibilityItem = () => {
     axios
       .get(disp_api_url)
       .then((response) => {
+        console.log(response.data)
         setDisponibilidads(response.data.disponibilidads);
         setWorkers(response.data.workers);
       })
@@ -32,12 +33,7 @@ const DisponibilityItem = () => {
     return filtered
   })
 
-  if(block_disp.length > 0) {
-    start_hour = Math.min.apply(Math, disponibilidads.map(e => e.hora));
-    end_hour = Math.max.apply(Math, disponibilidads.map(e => e.hora));
-  }
 
-  console.log("filtered: ", block_disp[0].filter((e) => e.fecha === "monday").length)
   return (
     <>
       <div>
@@ -57,15 +53,10 @@ const DisponibilityItem = () => {
                       <h4>{d}</h4>
                     </div>
                     <div>
-                      <Day disponibilidads={block_disp[index]} day={d} />
+                      {/* <Day disponibilidads={block_disp[index]} day={d} /> */}
                     </div>
                   </div>
                 ))}
-                {/* {block_disp[index].map((disp_worker) => (
-                  <div key={disp_worker.id} className="week-day">
-                    {disp_worker.fecha}
-                  </div>
-                ))} */}
               </div>
             </div>
           </div>
